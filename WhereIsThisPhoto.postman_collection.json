@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "33f7dd83-2785-478a-9bf4-8dc7784f90a3",
+		"name": "WhereIsThisPhoto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30187766"
+	},
+	"item": [
+		{
+			"name": "New Prediction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey {{api_key_id}}:{{api_secret_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"imageUrl\": \"https://fastly.picsum.photos/id/43/1280/831.jpg?hmac=glK-rQ0ppFClW-lvjk9FqEWKog07XkOxJf6Xg_cU9LI\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/location",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Prediction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey {{api_key_id}}:{{api_secret_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/location?id=99992",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"location"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "99992"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey {{api_key_id}}:{{api_secret_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/account-details",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"account-details"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "api_key_id",
+			"value": ""
+		},
+		{
+			"key": "api_secret_key",
+			"value": ""
+		}
+	]
+}
